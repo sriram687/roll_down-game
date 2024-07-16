@@ -18,4 +18,22 @@ while True:
     else:
          print("The Entered Number is invalid")
 
-print(players)
+max_score = 50
+player_scores = [0 for _ in range(players)]
+
+while max(player_scores) < max_score:
+
+    current_score = 0
+
+
+    should_roll = input("Would you like to roll? (y)? ") 
+    if should_roll.lower() == "y":
+        break
+    value = roll()
+    if value == 1:
+        print("you rolled 1! turn done")
+    else:
+        current_score += value
+        print("you rolled :", value)
+
+    print("Your score is ", current_score)
